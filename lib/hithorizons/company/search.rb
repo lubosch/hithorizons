@@ -10,7 +10,7 @@ module Hithorizons
           AddressStreet: address_street, City: city, StateProvince: state_province, Country: country, ShowBranches: show_branches,
           CompanyTypes: company_types, MaxResults: max_results
         }
-        request('/Search', 'GET', payload.compact)
+        process_request('/Search', 'GET', payload.compact)
       end
     end
   end

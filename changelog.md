@@ -5,3 +5,6 @@ Init
 
 ## 0.2
 Connect to APIs
+
+## 0.3
+Response object

@@ -11,8 +11,8 @@ RSpec.describe Hithorizons::Company::Detail do
     it 'sends request to hithorizons' do
       stub_request(:get, 'https://api.hithorizons.com/Company/Get?HitHorizonsId=H-SK0004570782')
         .and_return(body: '{ "Success": true, "Result": { "HitHorizonsId": "H-SK0004570782" } }')
-      expect(subject['Success']).to be_truthy
-      expect(subject['Result']['HitHorizonsId']).to eq 'H-SK0004570782'
+      expect(subject.success).to be_truthy
+      expect(subject.result['HitHorizonsId']).to eq 'H-SK0004570782'
     end
   end
 end

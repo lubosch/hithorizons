@@ -5,10 +5,18 @@ module Hithorizons
     class BaseApi
       API_URL = '/Company'
 
+      def self.process_request(uri, method = 'GET', payload = nil)
+        response = request(uri, method, payload)
+
+        raise Hithorizons::Error, response.body if response.status != 200
+
+        Hithorizons::Company::Response.new(response.body)
+      end
+
       def self.request(uri, method = 'GET', payload = nil)
         client = initialize_client
 
-        response = client.send(method.downcase.to_sym) do |request|
+        client.send(method.downcase.to_sym) do |request|
           request.headers['Ocp-Apim-Subscription-Key'] = Hithorizons.config.api_key
           request.url("#{API_URL}#{uri}")
           if method == 'GET'
@@ -18,9 +26,6 @@ module Hithorizons
           end
         end
 
-        raise Hithorizons::Error, response.body if response.status != 200
-
-        response.body
       end
 
       def self.initialize_client

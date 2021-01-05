@@ -8,7 +8,7 @@ module Hithorizons
           Ids: ids, Name: name, Address: address, ShowBranches: show_branches,
           CompanyTypes: company_types, MaxResults: max_results
         }
-        request('/SearchUnstructured', 'GET', payload.compact)
+        process_request('/SearchUnstructured', 'GET', payload.compact)
       end
     end
   end
