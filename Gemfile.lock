@@ -1,0 +1,93 @@
+PATH
+  remote: .
+  specs:
+    hithorizons (0.1.0)
+      faraday (~> 1)
+      faraday_middleware (~> 1)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    addressable (2.7.0)
+      public_suffix (>= 2.0.2, < 5.0)
+    ast (2.4.1)
+    codecov (0.2.12)
+      json
+      simplecov
+    crack (0.4.5)
+      rexml
+    diff-lcs (1.4.4)
+    docile (1.3.4)
+    faraday (1.3.0)
+      faraday-net_http (~> 1.0)
+      multipart-post (>= 1.2, < 3)
+      ruby2_keywords
+    faraday-net_http (1.0.0)
+    faraday_middleware (1.0.0)
+      faraday (~> 1.0)
+    hashdiff (1.0.1)
+    json (2.5.1)
+    multipart-post (2.1.1)
+    parallel (1.20.1)
+    parser (3.0.0.0)
+      ast (~> 2.4.1)
+    public_suffix (4.0.6)
+    rainbow (3.0.0)
+    rake (13.0.3)
+    regexp_parser (2.0.3)
+    rexml (3.2.4)
+    rspec (3.10.0)
+      rspec-core (~> 3.10.0)
+      rspec-expectations (~> 3.10.0)
+      rspec-mocks (~> 3.10.0)
+    rspec-core (3.10.1)
+      rspec-support (~> 3.10.0)
+    rspec-expectations (3.10.1)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.10.0)
+    rspec-mocks (3.10.1)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.10.0)
+    rspec-support (3.10.1)
+    rubocop (1.7.0)
+      parallel (~> 1.10)
+      parser (>= 2.7.1.5)
+      rainbow (>= 2.2.2, < 4.0)
+      regexp_parser (>= 1.8, < 3.0)
+      rexml
+      rubocop-ast (>= 1.2.0, < 2.0)
+      ruby-progressbar (~> 1.7)
+      unicode-display_width (>= 1.4.0, < 2.0)
+    rubocop-ast (1.4.0)
+      parser (>= 2.7.1.5)
+    rubocop-rspec (1.42.0)
+      rubocop (>= 0.87.0)
+    ruby-progressbar (1.11.0)
+    ruby2_keywords (0.0.2)
+    simplecov (0.21.1)
+      docile (~> 1.1)
+      simplecov-html (~> 0.11)
+      simplecov_json_formatter (~> 0.1)
+    simplecov-html (0.12.3)
+    simplecov_json_formatter (0.1.2)
+    unicode-display_width (1.7.0)
+    webmock (3.11.0)
+      addressable (>= 2.3.6)
+      crack (>= 0.3.2)
+      hashdiff (>= 0.4.0, < 2.0.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  codecov (~> 0.2)
+  hithorizons!
+  rake (~> 13.0)
+  rspec (~> 3.6)
+  rubocop (~> 1.7)
+  rubocop-rspec (~> 1.42)
+  simplecov (~> 0.21)
+  webmock (~> 3.11.0)
+
+BUNDLED WITH
+   2.1.4

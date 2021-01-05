@@ -9,7 +9,13 @@ AllCops:
     - 'bin/*'
     - 'tmp/**/*'
 
+Layout/LineLength:
+  Max: 150
+
 Layout/ParameterAlignment:
+  Enabled: false
+
+Metrics/ParameterLists:
   Enabled: false
 
 Layout/MultilineMethodCallIndentation:
@@ -21,10 +27,6 @@ Metrics/BlockLength:
 
 Naming/FileName:
   Exclude:
-
-Naming/MethodParameterName:
-  Exclude:
-    - 'spec/**/*'
 
 Style/Documentation:
   Enabled: false
