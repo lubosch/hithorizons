@@ -1,8 +1,10 @@
+[![Build Status](https://travis-ci.com/lubosch/exponea.svg?branch=master)](https://travis-ci.com/lubosch/exponea)
+[![Coverage Status](https://codecov.io/gh/lubosch/exponea/branch/master/graph/badge.svg)](https://codecov.io/gh/lubosch/exponea)
+
 # Hithorizons
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/hithorizons`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Gem for integration with HitHorizons. Provider api integration for
+company search and company detail.
 
 ## Installation
 
@@ -22,7 +24,87 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+### Configure it with:
+
+```ruby
+Hithorizons.configure do |config|
+  config.api_key = API_KEY
+end
+```
+
+### Hithorizons::Company::Response
+
+Is response object
+
+`#success` - Boolean
+
+`#error` - Error text if not success
+
+`#result` - Result object
+
+`#results` - Results array of objects
+
+`#total_count` - Total results count for multiple results
+
+`#results_count` - Current results count
+
+### Retrieve company detail
+
+https://hithorizonsapim.portal.azure-api.net/docs/services/hithorizons-api/operations/get-company-get
+
+```ruby
+Hithorizons::Company::Detail.get(hithorizon_id)
+# => Hithorizons::Company::Response
+```
+
+### Search company
+
+https://hithorizonsapim.portal.azure-api.net/docs/services/hithorizons-api/operations/get-company-search
+
+```ruby
+Hithorizons::Company::Search.get(
+  duns_number: nil, company_name: nil, national_id: nil,
+  address_unstructured: nil, address_street: nil,
+  city: nil, state_province: nil, country: nil,
+  show_branches: nil, company_types: nil, max_results: nil
+)
+# => Hithorizons::Company::Response
+```
+
+### Search company unstructured / raw
+
+https://hithorizonsapim.portal.azure-api.net/docs/services/hithorizons-api/operations/get-company-searchunstructured
+
+```ruby
+Hithorizons::Company::SearchUnstructured.get(
+  ids: nil, name: nil, address: nil, show_branches: nil,
+  company_types: nil, max_results: nil
+)
+# => Hithorizons::Company::Response
+```
+
+### Helpers
+
+```ruby
+Hithorizons::CompanyTypes.find_by_code('3')
+# => corporation
+```
+
+```ruby
+Hithorizons::IndustryTypes.find_by_code('D')
+# => Manufacturing
+```
+
+```ruby
+Hithorizons::Countries.find_by_iso3('SVK')
+# => SLOVAKIA
+Hithorizons::Countries.iso3_by_country('SLOVAKIA')
+# => SVK
+```
+
+### Errors
+
+`Hithorizons::Error` - If API throws an error (invalid credentials, ..)
 
 ## Development
 

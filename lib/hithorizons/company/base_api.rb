@@ -8,7 +8,7 @@ module Hithorizons
       def self.process_request(uri, method = 'GET', payload = nil)
         response = request(uri, method, payload)
 
-        raise Hithorizons::Error, response.body if response.status != 200
+        raise(Hithorizons::Error, response.body) if response.status != 200
 
         Hithorizons::Company::Response.new(response.body)
       end
@@ -25,7 +25,6 @@ module Hithorizons
             request.body = payload
           end
         end
-
       end
 
       def self.initialize_client

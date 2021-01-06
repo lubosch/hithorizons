@@ -26,11 +26,11 @@ module Hithorizons
       end
 
       def total_count
-        response['TotalCount']
+        response.dig('Result', 'TotalCount')
       end
 
       def results_count
-        response['ResultsCount']
+        response.dig('Result', 'ResultsCount')
       end
     end
   end
