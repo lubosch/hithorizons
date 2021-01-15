@@ -14,3 +14,6 @@ Response object fix
 
 ## 0.4
 Helpers, readme
+
+## 0.5
+Better countries API

@@ -8,6 +8,7 @@ AllCops:
   Exclude:
     - 'bin/*'
     - 'tmp/**/*'
+    - 'spec/**/*'
 
 Layout/LineLength:
   Max: 150
