@@ -17,3 +17,6 @@ Helpers, readme
 
 ## 0.5
 Better countries API
+
+## 0.6
+Countries fixes

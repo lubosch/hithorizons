@@ -4,14 +4,20 @@ module Hithorizons
   class Country
     attr_reader :iso3, :name
 
-    def initialize(iso3, name, registration_number)
+    def initialize(iso3, name, registration_number: false, tax_id: false, vat_id: false)
       @iso3 = iso3
       @name = name
       @registration_number = registration_number
+      @tax_id = tax_id
+      @vat_id = vat_id
     end
 
     def vat_id?
-      !@registration_number
+      @vat_id
+    end
+
+    def tax_id?
+      @tax_id
     end
 
     def registration_number?
@@ -21,25 +27,19 @@ module Hithorizons
     def vat_id(company)
       return unless vat_id?
 
-      case iso3
-      when 'HUN'
-        "HU#{company['NationalId'][0...-3]}"
-      when 'ROU'
-        "RO#{company['NationalId']}"
-      else
-        company['NationalId']
-      end
+      company['NationalId']
     end
 
     def tax_id(company)
-      case iso3
-      when 'HUN', 'ROU'
-        company['NationalId']
-      end
+      return unless tax_id?
+
+      company['NationalId']
     end
 
     def registration_number(company)
-      @registration_number ? company['NationalId'] : nil
+      return unless registration_number?
+
+      company['NationalId']
     end
   end
 end

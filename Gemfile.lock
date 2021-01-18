@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    hithorizons (0.5)
+    hithorizons (0.6)
       faraday (~> 1)
       faraday_middleware (~> 1)
 
