@@ -2,14 +2,19 @@
 
 module Hithorizons
   class Country
-    attr_reader :iso3, :name
+    attr_reader :iso3, :name, :invoicing_api
 
-    def initialize(iso3, name, registration_number: false, tax_id: false, vat_id: false)
+    def initialize(iso3, name, registration_number: false, tax_id: false, vat_id: false, invoicing_api: false)
       @iso3 = iso3
       @name = name
       @registration_number = registration_number
       @tax_id = tax_id
       @vat_id = vat_id
+      @invoicing_api = invoicing_api
+    end
+
+    def invoicing_api?
+      @invoicing_api
     end
 
     def vat_id?
