@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
 module Hithorizons
-  module Company
+  module Invoicing
     class BaseApi < Hithorizons::BaseApi
-      API_URL = '/Company'
+      API_URL = '/invoicing'
 
       def self.api_key
-        Hithorizons.config.api_key
+        Hithorizons.config.invoicing_api_key
       end
     end
   end

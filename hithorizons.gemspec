@@ -12,7 +12,7 @@ Gem::Specification.new do |spec|
   spec.description   = 'Horizonts api integration for get, search and search unstructured'
   spec.homepage      = 'https://github.com/lubosch/hithorizons'
   spec.license       = 'MIT'
-  spec.required_ruby_version = Gem::Requirement.new('>= 2.4.0')
+  spec.required_ruby_version = Gem::Requirement.new('>= 3.1')
 
   spec.metadata['homepage_uri'] = spec.homepage
   spec.metadata['source_code_uri'] = spec.homepage
@@ -36,5 +36,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rubocop', '~> 1.7'
   spec.add_development_dependency 'rubocop-rspec', '~> 2'
   spec.add_development_dependency 'simplecov', '~> 0.21'
-  spec.add_development_dependency 'webmock', '~> 3.11.0'
+  spec.add_development_dependency 'webmock', '~> 3'
+  spec.metadata['rubygems_mfa_required'] = 'true'
 end

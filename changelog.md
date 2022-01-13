@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0
+
+- Upgrade ruby to 3.1
+- Add invoicing API
+
 ## 0.1
 Init
 

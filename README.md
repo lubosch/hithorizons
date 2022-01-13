@@ -29,6 +29,7 @@ Or install it yourself as:
 ```ruby
 Hithorizons.configure do |config|
   config.api_key = API_KEY
+  config.invoicing_api_key = INVOICING_API_KEY
 end
 ```
 

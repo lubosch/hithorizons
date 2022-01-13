@@ -18,4 +18,5 @@ end
 
 Hithorizons.configure do |config|
   config.api_key = 'hithorizonsAPIkey'
+  config.invoicing_api_key = 'hithorizonsInvoicingAPIkey'
 end
