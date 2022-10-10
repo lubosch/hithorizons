@@ -3,6 +3,7 @@
 require 'spec_helper'
 
 RSpec.describe Hithorizons::Invoicing::Detail do
+  let(:headers) { { 'Content-Type' => 'application/json' } }
   describe '.get' do
     subject do
       described_class.get(id: '47165367', country_code: 'sk')
@@ -11,7 +12,7 @@ RSpec.describe Hithorizons::Invoicing::Detail do
     it 'sends request to hithorizons' do
       stub_request(:get, 'https://api.hithorizons.com/invoicing/sk/Company/Detail?Id=47165367')
         .with(headers: { 'Ocp-Apim-Subscription-Key' => 'hithorizonsInvoicingAPIkey' })
-        .and_return(body: '{
+        .and_return(headers:, body: '{
  "Success": true,
  "Error": null,
  "Result": {

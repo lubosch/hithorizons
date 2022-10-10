@@ -3,6 +3,7 @@
 require 'spec_helper'
 
 RSpec.describe Hithorizons::Invoicing::Search do
+  let(:headers) { { 'Content-Type' => 'application/json' } }
   describe '.get' do
     subject do
       described_class.get(country_code: 'sk', company_name: 'People2People', national_id: '51225221', max_results: 2,
@@ -14,7 +15,7 @@ RSpec.describe Hithorizons::Invoicing::Search do
                             AddressStreet=Suche\ myto&AddressUnstructured=Suche\ myto\ 6&City=Bratislava&
                             CompanyName=People2People&Country=SLOVAKIA&MaxResults=2&NationalId=51225221).join)
         .with(headers: { 'Ocp-Apim-Subscription-Key' => 'hithorizonsInvoicingAPIkey' })
-        .and_return(body: '{
+        .and_return(headers:, body: '{
  "Success": true,
  "Error": null,
  "Result": {

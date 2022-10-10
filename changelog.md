@@ -4,6 +4,7 @@
 
 - Upgrade ruby to 3.1
 - Add invoicing API
+- Faraday 2
 
 ## 0.1
 Init

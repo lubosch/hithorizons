@@ -3,6 +3,7 @@
 require 'spec_helper'
 
 RSpec.describe Hithorizons::Invoicing::SearchUnstructured do
+  let(:headers) { { 'Content-Type' => 'application/json' } }
   describe '.get' do
     subject do
       described_class.get(country_code: 'sk', name: 'People2People', max_results: 2, address: 'Suche myto 6')
@@ -10,7 +11,7 @@ RSpec.describe Hithorizons::Invoicing::SearchUnstructured do
 
     it 'sends search request to hithorizons' do
       stub_request(:get, 'https://api.hithorizons.com/invoicing/sk/Company/SearchUnstructured?Address=Suche myto 6&MaxResults=2&Name=People2People')
-        .and_return(body: '{
+        .and_return(headers:, body: '{
  "Success": true,
  "Error": null,
  "Result": {
